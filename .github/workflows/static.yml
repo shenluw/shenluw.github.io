@@ -39,7 +39,7 @@ jobs:
           repository: shenluw/it-tools  # 其他仓库地址
           ref: main  # 其他仓库的分支
           path: it-tools  # 检出到 it-tools 目录
-          token: ${{ secrets.GITHUB_TOKEN }}  #
+          token: ${{ secrets.CV_TOKEN }}  #
       - name: build it tools
         run: |
           cd it-tools
