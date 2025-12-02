@@ -30,11 +30,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: main 
       - name: Checkout other repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: shenluw/it-tools  # 其他仓库地址
           ref: main  # 其他仓库的分支
