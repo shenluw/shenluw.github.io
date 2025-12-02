@@ -41,8 +41,9 @@ jobs:
           path: it-tools  # 检出到 it-tools 目录
           token: ${{ secrets.GITHUB_TOKEN }}  # 自动生成，无需手动配置（私有仓库需用 PAT）
       - name: build it tools
-        run: 
+        run: |
           cd it-tools
+          npm install -g pnpm
           pnpm install
           pnpm build
 
