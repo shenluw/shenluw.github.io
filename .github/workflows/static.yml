@@ -32,14 +32,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: main  # 检出到 main-repo 目录
+          path: main 
       - name: Checkout other repo
         uses: actions/checkout@v4
         with:
           repository: shenluw/it-tools  # 其他仓库地址
           ref: main  # 其他仓库的分支
           path: it-tools  # 检出到 it-tools 目录
-          # token: ${{ secrets.GITHUB_TOKEN }}  # 自动生成，无需手动配置（私有仓库需用 PAT）
+          token: ${{ secrets.GITHUB_TOKEN }}  #
       - name: build it tools
         run: |
           cd it-tools
@@ -49,8 +49,8 @@ jobs:
 
       - name: Copy resources from it-tools repo
         run: |
+          mkdir ./main/dist
           cp -r ./it-tools/dist/* ./main/dist
-          
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
